@@ -7,6 +7,17 @@ local keymap = vim.keymap -- for conciseness
 -- General Keymaps
 ---------------------
 
+-- Disable arrowkeys
+vim.api.nvim_set_keymap("n", "<Up>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Down>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Left>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Right>", "<Nop>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("i", "<Up>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<Down>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<Left>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<Right>", "<Nop>", { noremap = true, silent = true })
+
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 keymap.set("i", "kj", "<ESC>")
@@ -69,5 +80,8 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
--- restart lsp server (not on youtube nvim video)
+-- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- LazyGit window
+keymap.set("n", "<leader>gg", ":LazyGit<CR>")

@@ -1,6 +1,18 @@
 local setup, ibl = pcall(require, "ibl")
 if not setup then
-  return
+	return
 end
 
-ibl.setup()
+-- local context_char = "│"
+--
+-- local char = "┆"
+-- local highlight = {
+-- 	"CursorColumn",
+-- 	"Whitespace",
+-- }
+
+ibl.setup({
+	exclude = {
+		filetypes = { "NvimTree", "help", "markdown" },
+	},
+})

@@ -18,8 +18,6 @@ treesitter.setup({
 	ensure_installed = {
 		"json",
 		"javascript",
-		"typescript",
-		"tsx",
 		"html",
 		"css",
 		"yaml",

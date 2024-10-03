@@ -4,7 +4,7 @@ if not status then
 end
 
 which_key.setup {
-    window = {
+    win_opts = {
         border = { '', '▔', '', '', '', ' ', '', '' },
         margin = { 0, 0, 1, 0 },
         padding = { 0, 0, 0, 0 },

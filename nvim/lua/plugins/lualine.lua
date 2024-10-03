@@ -132,19 +132,6 @@ local function get_git_compare()
   return string
 end
 
-local text_hl
-local icon_hl
-
-if vim.g.colors_name == 'nordic' then
-  local C = require 'nordic.colors'
-  text_hl = { fg = C.gray3 }
-  icon_hl = { fg = C.gray4 }
-elseif vim.g.colors_name == 'tokyonight' then
-  local C = require 'tokyonight.colors'
-  text_hl = { fg = C.default.fg_gutter }
-  icon_hl = { fg = C.default.dark3 }
-end
-
 local function get_short_cwd() return vim.fn.fnamemodify(vim.fn.getcwd(), ':~') end
 local tree = {
   sections = {
@@ -304,6 +291,6 @@ require('lualine').setup {
 -- Ensure correct backgrond for lualine.
 vim.api.nvim_create_autocmd({ 'BufWinEnter', 'WinEnter' }, {
   callback = function(_) require('lualine').setup {} end,
-  pattern = { '*.*' },
+--   pattern = { '*.*' },
   once = true,
 })

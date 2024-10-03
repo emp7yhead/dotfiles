@@ -50,7 +50,6 @@ local options = {
 	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
 	scrolloff = 8, -- minimal number of screen lines to keep above and below the cursor
 	sidescrolloff = 8, -- minimal number of screen columns either side of cursor if wrap is `false`
-	guifont = { "Martian_Mono", ":h18" }, -- the font used in graphical neovim applications
 	eol = true,
 	list = true,
 	colorcolumn = "80",
@@ -64,7 +63,7 @@ end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
-vim.cmd("set lcs+=space:·")
+-- vim.cmd("set lcs+=space:·")
 -- remove trailing whitespace on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = { "*" },
